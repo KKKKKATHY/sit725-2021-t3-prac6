@@ -8,8 +8,8 @@ socket.on('number', (msg) => {
 })
 
 $(document).ready(() => {
-  console.log('-> PageReady')
-  $("#nav-bar").load('./component/navbar.html',() => {
+  console.log('-> Page two Ready')
+  $("#nav-bar").load('../component/navbar.html',() => {
     $('.sidenav').sidenav();
   })
   $("footer").load('./component/foot.html')
@@ -17,7 +17,7 @@ $(document).ready(() => {
   //test get call
   $.get('/api/init', ({result}) => {
     console.log('--> page init: ', result)
-    for(let project of result[0].items){
+    for(let project of result[1].items){
       $('#display').append(createProjectCard(project)); 
     }
   })
